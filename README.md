@@ -21,3 +21,5 @@
 [Android屏幕大小适配问题解决](http://www.2cto.com/kf/201405/301671.html)
 
 [Android屏幕适配小技巧sw<n>dp](http://blog.csdn.net/chenzujie/article/details/9874859)
+
+[AndroidAutoLayout] (https://github.com/hongyangAndroid/AndroidAutoLayout)
