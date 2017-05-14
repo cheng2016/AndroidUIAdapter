@@ -22,4 +22,4 @@
 
 [Android屏幕适配小技巧sw<n>dp](http://blog.csdn.net/chenzujie/article/details/9874859)
 
-[AndroidAutoLayout] (https://github.com/hongyangAndroid/AndroidAutoLayout)
+[AndroidAutoLayout](https://github.com/hongyangAndroid/AndroidAutoLayout)
