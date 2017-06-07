@@ -43,6 +43,8 @@ int width = 750 / density;
 
  
 
+
+
 #### 屏幕适配参考链接
 
 [一分钟了解Android屏幕 ldpi mdpi hdpi xhdpi](http://www.2cto.com/kf/201506/404773.html)
