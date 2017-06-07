@@ -5,7 +5,7 @@
 
 1. **第一步，复制该项目res目录下包含dimens.xml的velues文件夹到自己的项目的res目录下，其中values文件夹只复制其dimens.xml文件**
 
-   ![](screenshot\dev20170607225734.png)
+   ![](screenshot/dev20170607225734.png)
 
 2. **直接在项目中引用， px / 密度 = dp（通常密度为2，例：10px / 2 =  5dp）**
 
