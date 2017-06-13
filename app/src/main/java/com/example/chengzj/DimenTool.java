@@ -18,7 +18,7 @@ public class DimenTool {
 
         File file = new File("./app/src/main/res/values/dimens.xml");
         BufferedReader reader = null;
-        //StringBuilder sw180 = new StringBuilder();
+//        StringBuilder sw180 = new StringBuilder();
         StringBuilder sw240 = new StringBuilder();
         StringBuilder sw320 = new StringBuilder();
         StringBuilder sw360 = new StringBuilder();
@@ -31,7 +31,7 @@ public class DimenTool {
         StringBuilder sw800 = new StringBuilder();
         StringBuilder sw900 = new StringBuilder();
         StringBuilder sw1024 = new StringBuilder();
-        //StringBuilder sw1280 = new StringBuilder();
+//        StringBuilder sw1280 = new StringBuilder();
 
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -50,7 +50,7 @@ public class DimenTool {
 					int density = 2;//默认密度是160,设备默认密度是320,所以缩放因子是320/160
                     int width = 750 / density;
 
-                    //sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
+//                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
                     sw240.append(start).append((int) Math.round(num * 240 / width)).append(end).append("\n");
                     sw320.append(start).append((int) Math.round(num * 320 / width)).append(end).append("\n");
                     sw360.append(start).append((int) Math.round(num * 360 / width)).append(end).append("\n");
@@ -68,11 +68,11 @@ public class DimenTool {
                     sw900.append(start).append((int) Math.round(num * 900 / width)).append(end).append("\n");
 
                     sw1024.append(start).append((int) Math.round(num * 1024 / width)).append(end).append("\n");
-                    //sw1280.append(start).append((int) Math.round(num * 1280 / width)).append(end).append("\n");
+//                    sw1280.append(start).append((int) Math.round(num * 1280 / width)).append(end).append("\n");
 
 
                 } else{
-                    //sw180.append(tempString).append("\n");
+//                    sw180.append(tempString).append("\n");
                     sw240.append(tempString).append("\n");
                     sw320.append(tempString).append("\n");
                     sw360.append(tempString).append("\n");
@@ -87,7 +87,7 @@ public class DimenTool {
                     sw900.append(tempString).append("\n");
 
                     sw1024.append(tempString).append("\n");
-                    //sw1280.append(tempString).append("\n");
+//                    sw1280.append(tempString).append("\n");
                 }
                 line++;
             }
@@ -102,7 +102,7 @@ public class DimenTool {
             System.out.println("<!--  sw1024 -->");
             System.out.println(sw1024);
 
-            //String sw180file = "./app/src/main/res/values-sw180dp/dimens.xml";
+//            String sw180file = "./app/src/main/res/values-sw180dp/dimens.xml";
             String sw240file = "./app/src/main/res/values-sw240dp/dimens.xml";
             String sw320file = "./app/src/main/res/values-sw320dp/dimens.xml";
             String sw360file = "./app/src/main/res/values-sw360dp/dimens.xml";
@@ -117,9 +117,9 @@ public class DimenTool {
             String sw900file = "./app/src/main/res/values-sw900dp/dimens.xml";
 
             String sw1024file = "./app/src/main/res/values-sw1024dp/dimens.xml";
-            //String sw1280file = "./app/src/main/res/values-sw1280dp/dimens.xml";
+//            String sw1280file = "./app/src/main/res/values-sw1280dp/dimens.xml";
 
-            //writeFile(sw180file, sw180.toString());
+//            writeFile(sw180file, sw180.toString());
             writeFile(sw240file, sw240.toString());
             writeFile(sw320file, sw320.toString());
             writeFile(sw360file, sw360.toString());
@@ -134,7 +134,7 @@ public class DimenTool {
             writeFile(sw900file, sw900.toString());
 
             writeFile(sw1024file, sw1024.toString());
-            //writeFile(sw1280file, sw1280.toString());
+//            writeFile(sw1280file, sw1280.toString());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -159,7 +159,23 @@ public class DimenTool {
         out.close();
     }
 
+    public static void genBaseDimensSize(){
+        System.out.println("<!--   ******************************Font******************************* -->");
+        for(int i = 6; i <= 36; i++){
+            StringBuilder sb = new StringBuilder("<dimen name=\"font_size_");
+            sb.append(i).append("\">").append(i).append("sp</dimen>");
+            System.out.println(sb.toString());
+        }
+        System.out.println("<!--   ******************************Widget******************************* -->");
+        for(int i = 1; i <= 400; i++){
+            StringBuilder sb = new StringBuilder("<dimen name=\"widget_size_");
+            sb.append(i).append("\">").append(i).append("dp</dimen>");
+            System.out.println(sb.toString());
+        }
+    }
+
     public static void main(String[] args) {
         gen();
+//        genBaseDimensSize();
     }
 }
