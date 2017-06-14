@@ -47,31 +47,31 @@ public class DimenTool {
                     float num = Float.valueOf(tempString.substring(tempString.indexOf(">") + 1, tempString.indexOf("</dimen>") - 2));
 
                     //根据UI画布大小比例进行换算，UI图相对分辨率为1334x750
-					int density = 2;//默认密度是160,设备默认密度是320,所以缩放因子是320/160
+                    int density = 2;//默认密度是160,设备默认密度是320,所以缩放因子是320/160
                     int width = 750 / density;
 
 //                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
-                    sw240.append(start).append((int) Math.round(num * 240 / width)).append(end).append("\n");
-                    sw320.append(start).append((int) Math.round(num * 320 / width)).append(end).append("\n");
-                    sw360.append(start).append((int) Math.round(num * 360 / width)).append(end).append("\n");
+                    sw240.append(start).append(Math.round(num * 240 / width)).append(end).append("\n");
+                    sw320.append(start).append(Math.round(num * 320 / width)).append(end).append("\n");
+                    sw360.append(start).append(Math.round(num * 360 / width)).append(end).append("\n");
 
-                    sw380.append(start).append((int) Math.round(num * 384 / width)).append(end).append("\n");
-                    sw410.append(start).append((int) Math.round(num * 410 / width)).append(end).append("\n");
+                    sw380.append(start).append(Math.round(num * 384 / width)).append(end).append("\n");
+                    sw410.append(start).append(Math.round(num * 410 / width)).append(end).append("\n");
 
-                    sw480.append(start).append((int) Math.round(num * 480 / width)).append(end).append("\n");
+                    sw480.append(start).append(Math.round(num * 480 / width)).append(end).append("\n");
 
-                    sw600.append(start).append((int) Math.round(num * 600 / width)).append(end).append("\n");
-                    sw720.append(start).append((int) Math.round(num * 720 / width)).append(end).append("\n");
+                    sw600.append(start).append(Math.round(num * 600 / width)).append(end).append("\n");
+                    sw720.append(start).append(Math.round(num * 720 / width)).append(end).append("\n");
 
-                    sw760.append(start).append((int) Math.round(num * 768 / width)).append(end).append("\n");
-                    sw800.append(start).append((int) Math.round(num * 800 / width)).append(end).append("\n");
-                    sw900.append(start).append((int) Math.round(num * 900 / width)).append(end).append("\n");
+                    sw760.append(start).append(Math.round(num * 768 / width)).append(end).append("\n");
+                    sw800.append(start).append(Math.round(num * 800 / width)).append(end).append("\n");
+                    sw900.append(start).append(Math.round(num * 900 / width)).append(end).append("\n");
 
-                    sw1024.append(start).append((int) Math.round(num * 1024 / width)).append(end).append("\n");
+                    sw1024.append(start).append(Math.round(num * 1024 / width)).append(end).append("\n");
 //                    sw1280.append(start).append((int) Math.round(num * 1280 / width)).append(end).append("\n");
 
 
-                } else{
+                } else {
 //                    sw180.append(tempString).append("\n");
                     sw240.append(tempString).append("\n");
                     sw320.append(tempString).append("\n");
@@ -148,7 +148,7 @@ public class DimenTool {
         }
     }
 
-    public static void writeFile(String file, String text) {
+    private static void writeFile(String file, String text) {
         PrintWriter out = null;
         try {
             out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
@@ -159,15 +159,15 @@ public class DimenTool {
         out.close();
     }
 
-    public static void genBaseDimensSize(){
+    private static void genBaseDimensSize() {
         System.out.println("<!--   ******************************Font******************************* -->");
-        for(int i = 6; i <= 36; i++){
+        for (int i = 6; i <= 36; i++) {
             StringBuilder sb = new StringBuilder("<dimen name=\"font_size_");
             sb.append(i).append("\">").append(i).append("sp</dimen>");
             System.out.println(sb.toString());
         }
         System.out.println("<!--   ******************************Widget******************************* -->");
-        for(int i = 1; i <= 400; i++){
+        for (int i = 1; i <= 400; i++) {
             StringBuilder sb = new StringBuilder("<dimen name=\"widget_size_");
             sb.append(i).append("\">").append(i).append("dp</dimen>");
             System.out.println(sb.toString());
