@@ -66,7 +66,7 @@ int width = 750 / density;
 
 # License
 
-    Copyright 2017 cheng2016,Inc.
+    Copyright 2016 cheng2016,Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
