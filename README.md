@@ -37,7 +37,7 @@ int width = 750 / density;
 
 ### 注意
 
-**如果dimens.xml中没有你们想要的尺寸，打开values文件下的dimens.xml文件中添加即可，再执行main函数生成相对于尺寸的即可**
+**如果dimens.xml中没有你们想要的尺寸，打开values文件下的dimens.xml文件中添加即可，再执行main函数生成相对应尺寸的即可**
 
 ![](screenshot/dev20170607231430.png)
 
