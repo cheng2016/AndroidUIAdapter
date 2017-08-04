@@ -46,9 +46,20 @@ public class DimenTool {
                     String end = tempString.substring(tempString.lastIndexOf("<") - 2);
                     float num = Float.valueOf(tempString.substring(tempString.indexOf(">") + 1, tempString.indexOf("</dimen>") - 2));
 
-                    //根据UI画布大小比例进行换算，UI图相对分辨率为1334x750
-                    int density = 2;//默认密度是160,设备默认密度是320,所以缩放因子是320/160
+                    /**
+                     * 根据UI画布大小比例进行换算，UI图相对分辨率为1334x750
+                     * 设备默认缩放因子密度为 2  = 320 / 160
+                     */
+                    int density = 2;
                     int width = 750 / density;
+
+                    /**
+                     * 如果设计图尺寸为1080x1920
+                     * 高分率缩放因子密度一般为 3 = 480 / 160 ，则：
+                     * 可选项，根据你实际的UI设计图来定义
+                     */
+                    density = 3;
+                    width = 1080 / density;
 
 //                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
                     sw240.append(start).append(Math.round(num * 240 / width)).append(end).append("\n");
