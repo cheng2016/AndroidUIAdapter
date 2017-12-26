@@ -159,15 +159,24 @@ public class DimenTool {
         }
     }
 
-    private static void writeFile(String file, String text) {
+    private static void writeFile(String file, String text) throws IOException{
+        CreateFileUtil.createFile(file);
         PrintWriter out = null;
+        FileWriter fileWriter = null;
         try {
-            out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+            fileWriter = new FileWriter(file);
+            out = new PrintWriter(new BufferedWriter(fileWriter));
             out.println(text);
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            if(out != null){
+                out.close();
+            }
+            if(fileWriter != null){
+                fileWriter.close();
+            }
         }
-        out.close();
     }
 
     private static void genBaseDimensSize() {
