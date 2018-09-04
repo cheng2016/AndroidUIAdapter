@@ -30,8 +30,9 @@ public class DimenTool {
         StringBuilder sw760 = new StringBuilder();
         StringBuilder sw800 = new StringBuilder();
         StringBuilder sw900 = new StringBuilder();
-        StringBuilder sw1024 = new StringBuilder();
-//        StringBuilder sw1280 = new StringBuilder();
+        StringBuilder sw1080 = new StringBuilder();
+        StringBuilder sw1200 = new StringBuilder();
+        StringBuilder sw1440 = new StringBuilder();
 
         try {
             reader = new BufferedReader(new FileReader(file));
@@ -58,8 +59,13 @@ public class DimenTool {
                      * 高分率缩放因子密度一般为 3 = 480 / 160 ，则：
                      * 可选项，根据你实际的UI设计图来定义
                      */
-                    density = 3;
-                    width = 1080 / density;
+//                    density = 3;
+//                    width = 1080 / density;
+
+
+                    density = 4;
+                    width = 1280 / density;
+
 
 //                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
                     sw240.append(start).append(Math.round(num * 240 / width)).append(end).append("\n");
@@ -78,8 +84,9 @@ public class DimenTool {
                     sw800.append(start).append(Math.round(num * 800 / width)).append(end).append("\n");
                     sw900.append(start).append(Math.round(num * 900 / width)).append(end).append("\n");
 
-                    sw1024.append(start).append(Math.round(num * 1024 / width)).append(end).append("\n");
-//                    sw1280.append(start).append((int) Math.round(num * 1280 / width)).append(end).append("\n");
+                    sw1080.append(start).append(Math.round(num * 1080 / width)).append(end).append("\n");
+                    sw1200.append(start).append(Math.round(num * 1200 / width)).append(end).append("\n");
+                    sw1440.append(start).append((int) Math.round(num * 1440 / width)).append(end).append("\n");
 
 
                 } else {
@@ -97,8 +104,9 @@ public class DimenTool {
                     sw800.append(tempString).append("\n");
                     sw900.append(tempString).append("\n");
 
-                    sw1024.append(tempString).append("\n");
-//                    sw1280.append(tempString).append("\n");
+                    sw1080.append(tempString).append("\n");
+                    sw1200.append(tempString).append("\n");
+                    sw1440.append(tempString).append("\n");
                 }
                 line++;
             }
@@ -110,8 +118,6 @@ public class DimenTool {
 
             System.out.println("<!--  sw720 -->");
             System.out.println(sw720);
-            System.out.println("<!--  sw1024 -->");
-            System.out.println(sw1024);
 
 //            String sw180file = "./app/src/main/res/values-sw180dp/dimens.xml";
             String sw240file = "./app/src/main/res/values-sw240dp/dimens.xml";
@@ -127,8 +133,9 @@ public class DimenTool {
             String sw800file = "./app/src/main/res/values-sw800dp/dimens.xml";
             String sw900file = "./app/src/main/res/values-sw900dp/dimens.xml";
 
-            String sw1024file = "./app/src/main/res/values-sw1024dp/dimens.xml";
-//            String sw1280file = "./app/src/main/res/values-sw1280dp/dimens.xml";
+            String sw1080file = "./app/src/main/res/values-sw1080dp/dimens.xml";
+            String sw1200file = "./app/src/main/res/values-sw1200dp/dimens.xml";
+            String sw1440file = "./app/src/main/res/values-sw1440dp/dimens.xml";
 
 //            writeFile(sw180file, sw180.toString());
             writeFile(sw240file, sw240.toString());
@@ -144,8 +151,9 @@ public class DimenTool {
             writeFile(sw800file, sw800.toString());
             writeFile(sw900file, sw900.toString());
 
-            writeFile(sw1024file, sw1024.toString());
-//            writeFile(sw1280file, sw1280.toString());
+            writeFile(sw1080file, sw1080.toString());
+            writeFile(sw1200file, sw1200.toString());
+            writeFile(sw1440file, sw1440.toString());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
