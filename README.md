@@ -60,6 +60,11 @@ width = 1080 / density;
 [AndroidAutoLayout](https://github.com/hongyangAndroid/AndroidAutoLayout)
 
 
+## 后记
+
+1920 x 1080 的设计图永远不可能满足 2160 x 1080的屏幕适配【即全面屏适配】
+
+AndroidUIAdapter适配方案没有问题，有问题的是设计图以及全面屏的普及使Android适配问题更加严峻。
 
 
 ### Contact Me
