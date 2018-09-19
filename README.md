@@ -70,7 +70,7 @@ width = 1080 / density;
 
 1. 根据需要适配的比例进行高度的手动换算 
 
-2. 使用 layout_weight 权重灵活定义高度
+2. 使用 layout_weight 权重属性灵活定义高度
 
 ### Contact Me
 
