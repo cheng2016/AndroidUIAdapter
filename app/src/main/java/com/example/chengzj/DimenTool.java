@@ -59,12 +59,8 @@ public class DimenTool {
                      * 高分率缩放因子密度一般为 3 = 480 / 160 ，则：
                      * 可选项，根据你实际的UI设计图来定义
                      */
-//                    density = 3;
-//                    width = 1080 / density;
-
-
-                    density = 4;
-                    width = 1280 / density;
+                    density = 3;
+                    width = 1080 / density;
 
 
 //                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
@@ -167,7 +163,7 @@ public class DimenTool {
         }
     }
 
-    private static void writeFile(String file, String text) throws IOException{
+    private static void writeFile(String file, String text) throws IOException {
         CreateFileUtil.createFile(file);
         PrintWriter out = null;
         FileWriter fileWriter = null;
@@ -177,11 +173,11 @@ public class DimenTool {
             out.println(text);
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(out != null){
+        } finally {
+            if (out != null) {
                 out.close();
             }
-            if(fileWriter != null){
+            if (fileWriter != null) {
                 fileWriter.close();
             }
         }
@@ -195,9 +191,14 @@ public class DimenTool {
             System.out.println(sb.toString());
         }
         System.out.println("<!--   ******************************Widget******************************* -->");
-        for (int i = 1; i <= 400; i++) {
+        for (int i = 1; i < 600; i++) {
             StringBuilder sb = new StringBuilder("<dimen name=\"widget_size_");
-            sb.append(i).append("\">").append(i).append("dp</dimen>");
+            if (i > 360) {
+                i += 4;
+                sb.append(i).append("\">").append(i).append("dp</dimen>");
+            } else {
+                sb.append(i).append("\">").append(i).append("dp</dimen>");
+            }
             System.out.println(sb.toString());
         }
     }
