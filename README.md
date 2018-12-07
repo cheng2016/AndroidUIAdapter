@@ -66,8 +66,10 @@
 
 ![](screenshot/dev20170607231430.png)
 
- 
 
+## Gradle  [![Stable Version](https://jitpack.io/v/cheng2016/AndroidUIAdapter.svg)](https://jitpack.io/#cheng2016/AndroidUIAdapter)
+    implementation 'com.github.cheng2016:AndroidUIAdapter:V1.0.0'
+<br/>
 
 
 #### 屏幕适配参考链接
