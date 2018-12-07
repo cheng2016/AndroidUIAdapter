@@ -23,26 +23,31 @@ public class DimenTool {
          */
         int width;
         /**
-         * 1.根据UI画布大小比例进行换算，假设UI图相对分辨率为1334x750
+         * 1.根据UI画布大小比例进行换算，假设UI图分辨率为1334x750
          * 设备默认缩放因子密度为 density  = 320 / 160 , 即 density = 2
          * 宽度 width = 750
          * 可选项，根据你实际的UI设计图来定义
          */
         density = 2;
         width = 750 / density;
-
         /**
-         * 2.根据UI画布大小比例进行换算，假设UI图相对分辨率为1080x1920
+         * 2.根据UI画布大小比例进行换算，假设UI图分辨率为1080x1920
          * 高分率缩放因子密度一般为 density = 80 / 160 , 即 density = 3
          * 宽度 width = 1080
          * 可选项，根据你实际的UI设计图来定义
          */
         density = 3;
         width = 1080 / density;
-
+        /**
+         * 执行生成适配的dimens.xml文件
+         */
         gen(width);
     }
 
+    /**
+     * 生成对应的适配的dimens.xml文件
+     * @param width
+     */
     public static void gen(int width) {
 
         File file = new File("./app/src/main/res/values/dimens.xml");

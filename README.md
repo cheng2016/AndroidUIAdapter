@@ -24,13 +24,34 @@
 ##### 第一步：在你的项目的DimenTool.java文件中中注明你的设计稿的尺寸（设计稿尺寸请联系你们公司的美工确认哦!），并进行修改成你的设计图的尺寸
 
 ```
-//根据UI画布大小比例进行换算，UI图相对分辨率为1334x750（注意这里只注重设备的宽度）
-int density = 2;//默认密度是160,设备默认密度是320,所以缩放因子是320/160
-int width = 750 / density;
-
-//如果设计图尺寸为1080x1920，高分率设备一般密度较高，这种高分辨率密度一般为3，则：
-density = 3;
-width = 1080 / density;
+        /**
+         * 密度因子
+         */
+        int density;
+        /**
+         * 屏幕相对宽度
+         */
+        int width;
+        /**
+         * 1.根据UI画布大小比例进行换算，假设UI图分辨率为1334x750
+         * 设备默认缩放因子密度为 density  = 320 / 160 , 即 density = 2
+         * 宽度 width = 750
+         * 可选项，根据你实际的UI设计图来定义
+         */
+        density = 2;
+        width = 750 / density;
+        /**
+         * 2.根据UI画布大小比例进行换算，假设UI图分辨率为1080x1920
+         * 高分率缩放因子密度一般为 density = 80 / 160 , 即 density = 3
+         * 宽度 width = 1080
+         * 可选项，根据你实际的UI设计图来定义
+         */
+        density = 3;
+        width = 1080 / density;
+        /**
+         * 执行生成适配的dimens.xml文件
+         */
+        gen(width);
 ```
 
 ![](screenshot/pic20170514140636.png)
@@ -82,13 +103,13 @@ width = 1080 / density;
 # License
 
     Copyright 2016 cheng2016,Inc.
-
+    
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-
+    
         http://www.apache.org/licenses/LICENSE-2.0
-
+    
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
