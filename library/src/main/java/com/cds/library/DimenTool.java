@@ -1,4 +1,4 @@
-package com.example.chengzj;
+package com.cds.library;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,8 +13,37 @@ import java.io.PrintWriter;
  */
 public class DimenTool {
 
-
     public static void gen() {
+        /**
+         * 密度因子
+         */
+        int density;
+        /**
+         * 屏幕相对宽度
+         */
+        int width;
+        /**
+         * 1.根据UI画布大小比例进行换算，假设UI图相对分辨率为1334x750
+         * 设备默认缩放因子密度为 density  = 320 / 160 , 即 density = 2
+         * 宽度 width = 750
+         * 可选项，根据你实际的UI设计图来定义
+         */
+        density = 2;
+        width = 750 / density;
+
+        /**
+         * 2.根据UI画布大小比例进行换算，假设UI图相对分辨率为1080x1920
+         * 高分率缩放因子密度一般为 density = 80 / 160 , 即 density = 3
+         * 宽度 width = 1080
+         * 可选项，根据你实际的UI设计图来定义
+         */
+        density = 3;
+        width = 1080 / density;
+
+        gen(width);
+    }
+
+    public static void gen(int width) {
 
         File file = new File("./app/src/main/res/values/dimens.xml");
         BufferedReader reader = null;
@@ -46,21 +75,6 @@ public class DimenTool {
                     String start = tempString.substring(0, tempString.indexOf(">") + 1);
                     String end = tempString.substring(tempString.lastIndexOf("<") - 2);
                     float num = Float.valueOf(tempString.substring(tempString.indexOf(">") + 1, tempString.indexOf("</dimen>") - 2));
-
-                    /**
-                     * 根据UI画布大小比例进行换算，UI图相对分辨率为1334x750
-                     * 设备默认缩放因子密度为 2  = 320 / 160
-                     */
-                    int density = 2;
-                    int width = 750 / density;
-
-                    /**
-                     * 如果设计图尺寸为1080x1920
-                     * 高分率缩放因子密度一般为 3 = 480 / 160 ，则：
-                     * 可选项，根据你实际的UI设计图来定义
-                     */
-                    density = 3;
-                    width = 1080 / density;
 
 
 //                    sw180.append(start).append((int) Math.round(num * 180 / width)).append(end).append("\n");
@@ -183,6 +197,9 @@ public class DimenTool {
         }
     }
 
+    /**
+     * 生成最基本的尺寸
+     */
     private static void genBaseDimensSize() {
         System.out.println("<!--   ******************************Font******************************* -->");
         for (int i = 6; i <= 36; i++) {
@@ -204,7 +221,7 @@ public class DimenTool {
     }
 
     public static void main(String[] args) {
+        genBaseDimensSize();
         gen();
-//        genBaseDimensSize();
     }
 }
