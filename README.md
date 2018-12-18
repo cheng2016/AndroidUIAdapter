@@ -79,18 +79,6 @@
 [AndroidAutoLayout](https://github.com/hongyangAndroid/AndroidAutoLayout)
 
 
-## 后记
-
-如果你是按照1920 x 1080 的设计图的尺寸开发UI，那么在 2160 x 1080 的全面屏手机中会出现高度偏差的问题
-
-即按照设计图的比例开发的UI与需要适配的手机屏幕比例必须一致，否则就会出现类似高度偏差的问题。
-
-解决方法：
-
-1. 根据需要适配的比例进行高度的手动换算 
-
-2. 使用 layout_weight 权重属性灵活定义高度
-
 ### Contact Me
 
 - Github: github.com/cheng2016
