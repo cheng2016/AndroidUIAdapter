@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="@dimen/font_size_16" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:text="Button"
+        android:textAllCaps="false" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:textSize="@dimen/font_size_14"
+        android:text="Switch" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_16"
+        android:textSize="@dimen/font_size_12"
+        android:text="CheckBox" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_20" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="@dimen/widget_size_200"
+        android:layout_height="@dimen/widget_size_48"
+        android:layout_marginTop="@dimen/widget_size_20" />
+
+
+</LinearLayout>
