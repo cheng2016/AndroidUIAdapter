@@ -91,11 +91,11 @@ dp = （相对宽度）1080 / （密度）3 = 360 dp;  则其自动适配的文�
 [约束布局ConstraintLayout强烈推荐](https://www.jianshu.com/p/17ec9bd6ca8a)
 
 
+## 其他
+
 #### [AndroidUtils常见工具类集合](https://github.com/cheng2016/AndroidUtil)
 
-
-	 
-
+	
 ## Contact Me
 
 - Github: github.com/cheng2016
