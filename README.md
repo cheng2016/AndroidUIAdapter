@@ -9,7 +9,7 @@ dp = 屏幕相对分辨率（如：1920 * 1080） / 相对密度
 
 举个栗子：
 
-dp = （相对宽度）1080 / （密度）3 = 360 dp;  则其自动适配的文件夹即为 values-sw360dp
+dp = （相对宽度）1080 / （密度比）3 = 360 dp;  则其自动适配的文件夹即为 values-sw360dp
 
 ### 使用
 
@@ -72,6 +72,23 @@ dp = （相对宽度）1080 / （密度）3 = 360 dp;  则其自动适配的文�
 
 ![](screenshot/dev20170607231430.png)
 
+## 获取屏幕密度比
+
+查看设备分辨率：
+adb shell wm size 
+
+查看屏幕密度（DPI）：
+adb shell wm density
+
+#### 标准dpi = 160
+
+DPI / 标准DPI = 密度比
+
+举个栗子：
+
+使用 adb shell wm density 指令得到：Physical density: 200
+
+则密度比 = 200 / 160 = 1.25
 
 ## Download  [![Stable Version](https://jitpack.io/v/cheng2016/AndroidUIAdapter.svg)](https://jitpack.io/#cheng2016/AndroidUIAdapter)
     implementation 'com.github.cheng2016:AndroidUIAdapter:V1.0.0'
@@ -90,13 +107,16 @@ dp = （相对宽度）1080 / （密度）3 = 360 dp;  则其自动适配的文�
 
 [约束布局ConstraintLayout强烈推荐](https://www.jianshu.com/p/17ec9bd6ca8a)
 
-
+[Android使用ADB命令查看设备分辨率和屏幕密度（DPI）](https://www.isilent.me/903.html))
+	
+[dpi 、 dip 、分辨率、屏幕尺寸、px、density 关系以及换算](https://www.cnblogs.com/yaozhongxiao/p/3842908.html))
+	
 ## 其他推荐
 
 #### [AndroidUtils常见工具类集合](https://github.com/cheng2016/AndroidUtil)
 
 [ImageDownLoader 手写的三级缓存框架二百多行代码搞定图片缓存](https://github.com/cheng2016/AndroidUtil/blob/master/util/ImageDownLoader.java)
-
+	
 	
 ## Contact Me
 
