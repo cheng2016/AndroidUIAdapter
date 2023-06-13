@@ -80,9 +80,9 @@ adb shell wm size
 查看屏幕密度（DPI）：
 adb shell wm density
 
-#### 标准dpi = 160
+#### 标准DPI = 160
 
-DPI / 标准DPI = 密度比
+屏幕密度DPI / 标准DPI = 密度比
 
 举个栗子：
 
