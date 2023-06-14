@@ -80,7 +80,7 @@ adb shell wm size
 查看屏幕密度（DPI）：
 adb shell wm density
 
-#### 标准DPI = 160
+#### 标准DPI = 160 (google规定的，听说因为第一个android设备DPI就是160，所以准表DPi就被设置为160了) 
 
 屏幕密度DPI / 标准DPI = 密度比
 
