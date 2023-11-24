@@ -127,7 +127,7 @@ adb shell wm density
 
 ## 如果对你有帮助，欢迎赞助，你的赞助是我分享的最大动力！！
 
-![](https://github.com/cheng2016/CustomScrollBarSample/blob/main/4c206bada387e760c7a0772ac.jpeg)   
+![](https://github.com/cheng2016/CustomScrollBarSample/blob/main/56130.png)   ![](https://github.com/cheng2016/CustomScrollBarSample/blob/main/772ac.png)   
 
 # License
 
