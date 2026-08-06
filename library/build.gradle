@@ -20,6 +20,49 @@ android {
     }
 }
 
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+// Pure-JVM compile so generateDimens works without a full Android SDK assemble.
+task compileDimenTool(type: JavaCompile) {
+    source = fileTree(dir: 'src/main/java', include: '**/*.java')
+    classpath = files()
+    destinationDir = file("$buildDir/dimen-tool-classes")
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+/**
+ * Regenerates values-sw&lt;N&gt;dp/dimens.xml from the base dimens.
+ *
+ * Examples:
+ *   ./gradlew :library:generateDimens
+ *   ./gradlew :library:generateDimens -PdesignWidth=375
+ *   ./gradlew :library:generateDimens -Pbuckets=240,320,360,480,600,720
+ */
+task generateDimens(type: JavaExec, dependsOn: compileDimenTool) {
+    description = 'Generate values-sw*dp/dimens.xml from app base dimens.xml'
+    group = 'build'
+    classpath = files("$buildDir/dimen-tool-classes")
+    main = 'com.cds.library.DimenTool'
+    workingDir = rootProject.projectDir
+
+    def designWidth = project.findProperty('designWidth') ?: '360'
+    def input = project.findProperty('dimensInput')
+            ?: 'app/src/main/res/values/dimens.xml'
+    def outputDir = project.findProperty('dimensOutputDir')
+            ?: 'app/src/main/res'
+    def buckets = project.findProperty('buckets')
+
+    args = ['--design-width', designWidth.toString(),
+            '--input', input.toString(),
+            '--output-dir', outputDir.toString()]
+    if (buckets != null) {
+        args += ['--buckets', buckets.toString()]
+    }
+}
+
 // build a jar with source files
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs

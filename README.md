@@ -29,46 +29,47 @@ dp = （相对宽度）1080 / （密度比）3 = 360 dp;  则其自动适配的�
 
    ​
 
-### 可选配置
+### 可选配置（生成多尺寸 dimens）
 
-##### 第一步：在你的项目的DimenTool.java文件中中注明你的设计稿的尺寸（设计稿尺寸请联系你们公司的美工确认哦!），并进行修改成你的设计图的尺寸
+##### 第一步：确认设计稿宽度（联系美工确认设计图尺寸）
 
-```
-        /**
-         * 密度因子
-         */
-        int density;
-        /**
-         * 屏幕相对宽度
-         */
-        int width;
-        /**
-         * 例子1.根据UI画布大小比例进行换算，假设UI图分辨率为1334x750
-         * 设备默认缩放因子密度为 density  = 320 / 160 , 即 density = 2
-         * 宽度 width = 750
-         * 可选项，根据你实际的UI设计图来定义
-         */
-        density = 2;
-        width = 750 / density;
-        /**
-         * 例子2.根据UI画布大小比例进行换算，假设UI图分辨率为1080x1920
-         * 高分率缩放因子密度一般为 density = 480 / 160 , 即 density = 3
-         * 宽度 width = 1080
-         * 可选项，根据你实际的UI设计图来定义
-         */
-        density = 3;
-        width = 1080 / density;
+默认按设计宽 **360dp**（1080px @ density 3）。若设计稿不同，生成时传入 `-PdesignWidth`，例如 750px @ density 2 → `375`：
+
+```bash
+gradle :library:generateDimens -PdesignWidth=375
 ```
 
 ![](screenshot/pic20170514140636.png)
-##### 第二步：执行Main函数生成相对应的dimens.xml文件
+
+##### 第二步：执行生成，得到各档 `values-sw*dp/dimens.xml`
+
+```bash
+gradle :library:generateDimens
+```
+
+也可在 IDE 中运行 `DimenTool.main`（支持 `--design-width` / `--buckets` / `--input` / `--output-dir`）：
+
 ![](screenshot/pic20170514140953.png)
 
+常用参数：
 
+```bash
+# 自定义 sw 档位（文件夹名与缩放系数一致）
+gradle :library:generateDimens -Pbuckets=240,320,360,410,480,600,720
+
+# 指定输入/输出路径
+gradle :library:generateDimens -PdimensInput=app/src/main/res/values/dimens.xml -PdimensOutputDir=app/src/main/res
+```
+
+生成规则：
+
+- 仅缩放 **dp/dip**；**sp**（字体）与 **px**（细线）保持原值，避免破坏无障碍与物理像素线
+- `values-sw380dp` 按 **380** 缩放（不再误用 384）；`values-sw760dp` 按 **760** 缩放（不再误用 768）
+- 已存在的 `dimens.xml` 会被直接覆盖
 
 ### 注意
 
-**如果dimens.xml中没有你们想要的尺寸，打开values文件下的dimens.xml文件中添加即可，再执行main函数生成相对应尺寸的即可**
+**如果 dimens.xml 中没有想要的尺寸，在 `values/dimens.xml` 中添加后，再执行 `generateDimens` 即可。**
 
 ![](screenshot/dev20170607231430.png)
 

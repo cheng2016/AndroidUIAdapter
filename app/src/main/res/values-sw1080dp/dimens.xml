@@ -5,42 +5,42 @@
 
 
     <!--   ******************************Widget******************************* -->
-    <dimen name="widget_min_size_1">3px</dimen>
-    <dimen name="widget_min_size_2">6px</dimen>
-    <dimen name="widget_min_size_3">9px</dimen>
+    <dimen name="widget_min_size_1">1px</dimen>
+    <dimen name="widget_min_size_2">2px</dimen>
+    <dimen name="widget_min_size_3">3px</dimen>
 
     <!--   ******************************Font******************************* -->
-    <dimen name="font_size_6">18sp</dimen>
-    <dimen name="font_size_7">21sp</dimen>
-    <dimen name="font_size_8">24sp</dimen>
-    <dimen name="font_size_9">27sp</dimen>
-    <dimen name="font_size_10">30sp</dimen>
-    <dimen name="font_size_11">33sp</dimen>
-    <dimen name="font_size_12">36sp</dimen>
-    <dimen name="font_size_13">39sp</dimen>
-    <dimen name="font_size_14">42sp</dimen>
-    <dimen name="font_size_15">45sp</dimen>
-    <dimen name="font_size_16">48sp</dimen>
-    <dimen name="font_size_17">51sp</dimen>
-    <dimen name="font_size_18">54sp</dimen>
-    <dimen name="font_size_19">57sp</dimen>
-    <dimen name="font_size_20">60sp</dimen>
-    <dimen name="font_size_21">63sp</dimen>
-    <dimen name="font_size_22">66sp</dimen>
-    <dimen name="font_size_23">69sp</dimen>
-    <dimen name="font_size_24">72sp</dimen>
-    <dimen name="font_size_25">75sp</dimen>
-    <dimen name="font_size_26">78sp</dimen>
-    <dimen name="font_size_27">81sp</dimen>
-    <dimen name="font_size_28">84sp</dimen>
-    <dimen name="font_size_29">87sp</dimen>
-    <dimen name="font_size_30">90sp</dimen>
-    <dimen name="font_size_31">93sp</dimen>
-    <dimen name="font_size_32">96sp</dimen>
-    <dimen name="font_size_33">99sp</dimen>
-    <dimen name="font_size_34">102sp</dimen>
-    <dimen name="font_size_35">105sp</dimen>
-    <dimen name="font_size_36">108sp</dimen>
+    <dimen name="font_size_6">6sp</dimen>
+    <dimen name="font_size_7">7sp</dimen>
+    <dimen name="font_size_8">8sp</dimen>
+    <dimen name="font_size_9">9sp</dimen>
+    <dimen name="font_size_10">10sp</dimen>
+    <dimen name="font_size_11">11sp</dimen>
+    <dimen name="font_size_12">12sp</dimen>
+    <dimen name="font_size_13">13sp</dimen>
+    <dimen name="font_size_14">14sp</dimen>
+    <dimen name="font_size_15">15sp</dimen>
+    <dimen name="font_size_16">16sp</dimen>
+    <dimen name="font_size_17">17sp</dimen>
+    <dimen name="font_size_18">18sp</dimen>
+    <dimen name="font_size_19">19sp</dimen>
+    <dimen name="font_size_20">20sp</dimen>
+    <dimen name="font_size_21">21sp</dimen>
+    <dimen name="font_size_22">22sp</dimen>
+    <dimen name="font_size_23">23sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+    <dimen name="font_size_25">25sp</dimen>
+    <dimen name="font_size_26">26sp</dimen>
+    <dimen name="font_size_27">27sp</dimen>
+    <dimen name="font_size_28">28sp</dimen>
+    <dimen name="font_size_29">29sp</dimen>
+    <dimen name="font_size_30">30sp</dimen>
+    <dimen name="font_size_31">31sp</dimen>
+    <dimen name="font_size_32">32sp</dimen>
+    <dimen name="font_size_33">33sp</dimen>
+    <dimen name="font_size_34">34sp</dimen>
+    <dimen name="font_size_35">35sp</dimen>
+    <dimen name="font_size_36">36sp</dimen>
     <!--   ******************************Widget******************************* -->
     <dimen name="widget_size_1">3dp</dimen>
     <dimen name="widget_size_2">6dp</dimen>
@@ -451,4 +451,3 @@
     <dimen name="widget_size_595">1785dp</dimen>
     <dimen name="widget_size_600">1800dp</dimen>
 </resources>
-
