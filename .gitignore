@@ -4,9 +4,9 @@
 /local.properties
 .DS_Store
 /build
+/app/build
+/library/build
 /captures
 .externalNativeBuild
-/gradle.properties
-/gradle.bat
-/gradlew.bat
-/gradlew
+.cxx
+/keystore/

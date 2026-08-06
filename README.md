@@ -11,6 +11,26 @@ dp = 屏幕相对分辨率（如：1920 * 1080） / 相对密度
 
 dp = （相对宽度）1080 / （密度比）3 = 360 dp;  则其自动适配的文件夹即为 values-sw360dp
 
+### 本地运行 Demo
+
+环境：JDK 8 + Android SDK（已装 platform 32 与 build-tools 30.0.3）。在项目根目录创建 `local.properties`：
+
+```
+sdk.dir=你的SDK路径
+```
+
+然后：
+
+```bash
+# Windows
+gradlew.bat :app:assembleDebug
+
+# 生成多尺寸 dimens
+gradlew.bat :library:generateDimens
+```
+
+Debug APK 输出：`app/build/outputs/apk/debug/app-debug.apk`
+
 ### 使用
 
 1. **第一步，复制该项目res目录下包含dimens.xml的velues文件夹到自己的项目的res目录下，其中values文件夹只复制其dimens.xml文件**
@@ -36,7 +56,7 @@ dp = （相对宽度）1080 / （密度比）3 = 360 dp;  则其自动适配的�
 默认按设计宽 **360dp**（1080px @ density 3）。若设计稿不同，生成时传入 `-PdesignWidth`，例如 750px @ density 2 → `375`：
 
 ```bash
-gradle :library:generateDimens -PdesignWidth=375
+gradlew.bat :library:generateDimens -PdesignWidth=375
 ```
 
 ![](screenshot/pic20170514140636.png)
@@ -44,7 +64,7 @@ gradle :library:generateDimens -PdesignWidth=375
 ##### 第二步：执行生成，得到各档 `values-sw*dp/dimens.xml`
 
 ```bash
-gradle :library:generateDimens
+gradlew.bat :library:generateDimens
 ```
 
 也可在 IDE 中运行 `DimenTool.main`（支持 `--design-width` / `--buckets` / `--input` / `--output-dir`）：
@@ -55,10 +75,10 @@ gradle :library:generateDimens
 
 ```bash
 # 自定义 sw 档位（文件夹名与缩放系数一致）
-gradle :library:generateDimens -Pbuckets=240,320,360,410,480,600,720
+gradlew.bat :library:generateDimens -Pbuckets=240,320,360,410,480,600,720
 
 # 指定输入/输出路径
-gradle :library:generateDimens -PdimensInput=app/src/main/res/values/dimens.xml -PdimensOutputDir=app/src/main/res
+gradlew.bat :library:generateDimens -PdimensInput=app/src/main/res/values/dimens.xml -PdimensOutputDir=app/src/main/res
 ```
 
 生成规则：
@@ -91,9 +111,13 @@ adb shell wm density
 
 则密度比 = 200 / 160 = 1.25
 
-## Download  [![Stable Version](https://jitpack.io/v/cheng2016/AndroidUIAdapter.svg)](https://jitpack.io/#cheng2016/AndroidUIAdapter)
-    implementation 'com.github.cheng2016:AndroidUIAdapter:V1.0.0'
-<br/>
+## Download
+
+```
+implementation 'com.github.cheng2016:AndroidUIAdapter:V1.0.0'
+```
+
+JitPack：https://jitpack.io/#cheng2016/AndroidUIAdapter
 
 
 #### 屏幕适配参考链接
